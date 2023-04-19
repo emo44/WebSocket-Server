@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cliente Websocket</title>
+<script type="text/javascript" src="websocket.js" charset="utf-8"></script>
+<style>
+    .block{
+        display:block; 
+        margin-top: 10px;
+    }
+
+    .button {
+  /*background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+.buttonverde_si {border-radius: 50%;background-color:green}
+.buttonrojo_no {border-radius: 50%;background-color:red}
+.buttonenviar {border-radius: 12%;background-color:gray}
+
+</style>
+</head>
+<body onload="init()">
+<h3>Demo App para votar cliente.</h3>
+
+<div id="message" class="block"></div>
+<p class="block">Introduce el id<br> que te han dado<br>en la entrada:<br> <input type="text" id="text" maxlength="4" size="4" onfocus="selectAll()"/></p>
+ <button class="button buttonverde_si" onclick="respondesi()">SI</button>
+ <button class="button buttonrojo_no" onclick="respondeno()">NO</button>
+<!-- <p class="block">Texto a mandar: <input type="text" id="text" onfocus="selectAll()"/></p> -->
+<!-- <button id="connect" onclick="connect()">Conectar</button> -->
+<!-- <button id="sendText" onclick="sendText()">Enviar</button> -->
+<br>
+<button class="button buttonenviar" id="sendJSONObject" onclick="sendJSONOjbect()">Enviar Respuesta</button>
+<!-- <button id="disconnect" onclick="disconnect()">Desconectar</button> -->
+
+
+</body>
+</html>
