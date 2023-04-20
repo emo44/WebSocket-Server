@@ -1,5 +1,5 @@
 # WebSocket-Server
-[![Github All Releases](https://img.shields.io/github/downloads/emo44/WebSocket-Server/total.svg)]()![GitHub](https://img.shields.io/github/license/emo44/WebSocket-Server)
+![GitHub](https://img.shields.io/github/license/emo44/WebSocket-Server)
 
 Simple WebSocket Server y Cliente Html
 
