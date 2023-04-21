@@ -1,4 +1,4 @@
-# pyinstaller videoenplay_une_csv.py --onefile --icon="C:\Users\emo\python\images\proxy.ico"
+# pyinstaller websocketserver.py --onefile --icon="C:\Users\emo\python\images\proxy.ico"
 import websockets
 import asyncio
 import time
@@ -16,13 +16,13 @@ def save_to_database(client_data):
     conn = sqlite3.connect('datos.db')
     c = conn.cursor()
     c.execute('''CREATE TABLE IF NOT EXISTS datos
-                 (identificador INTEGER PRIMARY KEY AUTOINCREMENT,
-                 id TEXT,
+                 (id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 identificador TEXT,
                   time TEXT,
                   text TEXT)''')
     
     data = json.loads(client_data)
-    c.execute('''INSERT INTO datos (id, time, text) VALUES (?, ?, ?)''', (data['id'], data['time'], data['text']))
+    c.execute('''INSERT INTO datos (id, time, text) VALUES (?, ?, ?)''', (data['identificador'], data['time'], data['text']))
     conn.commit()
     conn.close()
 
