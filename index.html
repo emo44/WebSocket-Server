@@ -1,50 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cliente Websocket</title>
-<script type="text/javascript" src="websocket.js" charset="utf-8"></script>
-<style>
-    .block{
-        display:block; 
-        margin-top: 10px;
-    }
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cliente Websocket</title>
+    <script type="text/javascript" src="websocket.js" charset="utf-8"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
 
-    .button {
-  /*background-color: #04AA6D; /* Green */
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
+        h3 {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
 
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
 
-.buttonverde_si {border-radius: 50%;background-color:green}
-.buttonrojo_no {border-radius: 50%;background-color:red}
-.buttonenviar {border-radius: 12%;background-color:gray}
+        .block {
+            margin-top: 20px;
+            text-align: center;
+        }
 
-</style>
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+            width: 100%;
+        }
+
+        .button {
+            border: none;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .buttonverde_si {
+            background-color: #4caf50;
+        }
+
+        .buttonverde_si:hover {
+            transform: scale(1.1);
+        }
+
+        .buttonrojo_no {
+            background-color: #f44336;
+        }
+
+        .buttonrojo_no:hover {
+            transform: scale(1.1);
+        }
+
+        .buttonenviar {
+            background-color: #ccc;
+            border-radius: 20px;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .buttonenviar:hover {
+            background-color: #555;
+            color: #fff;
+        }
+    </style>
 </head>
 <body onload="init()">
-<h3>Demo App para votar cliente.</h3>
-
-<div id="message" class="block"></div>
-<p class="block">Introduce el id<br> que te han dado<br>en la entrada:<br> <input type="text" id="text" maxlength="4" size="4" onfocus="selectAll()"/></p>
- <button class="button buttonverde_si" onclick="respondesi()">SI</button>
- <button class="button buttonrojo_no" onclick="respondeno()">NO</button>
-<!-- <p class="block">Texto a mandar: <input type="text" id="text" onfocus="selectAll()"/></p> -->
-<!-- <button id="connect" onclick="connect()">Conectar</button> -->
-<!-- <button id="sendText" onclick="sendText()">Enviar</button> -->
-<br>
-<button class="button buttonenviar" id="sendJSONObject" onclick="sendJSONOjbect()">Enviar Respuesta</button>
-<!-- <button id="disconnect" onclick="disconnect()">Desconectar</button> -->
-
-
+    <div class="container">
+        <h3>Demo App para votar cliente.</h3>
+        <div id="message" class="block"></div>
+        <div class="block">
+            <p>Introduce el id que te han dado en la entrada:</p>
+            <input type="text" id="text" maxlength="4" size="4" onfocus="selectAll()" />
+        </div>
+        <div class="block">
+            <button class="button buttonverde_si" onclick="respondesi()">SI</button>
+            <button class="button buttonrojo_no" onclick="respondeno()">NO</button>
+        </div>
+        <div class="block">
+            <button class="button buttonenviar" id="sendJSONObject" onclick="sendJSONOjbect()">Enviar Respuesta</button>
+        </div>
+    </div>
 </body>
 </html>

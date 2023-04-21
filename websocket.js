@@ -157,7 +157,7 @@ function sendJSONOjbect(){
 
             var elid=textInput.value.trim();
 
-            jsonObj = {id:elid,time:currentTime, text:sendText}
+            jsonObj = {identificador:elid,time:currentTime, text:sendText}
 
             tmpSendText = JSON.stringify(jsonObj)
 
